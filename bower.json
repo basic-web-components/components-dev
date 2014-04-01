@@ -1,0 +1,10 @@
+{
+  "name": "basic-web-components",
+  "version": "0.0.3",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "components"
+  ]
+}
