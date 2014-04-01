@@ -1,0 +1,3 @@
+[submodule "basic-autosize-textarea"]
+	path = basic-autosize-textarea
+	url = git@github.com:basic-web-components/basic-autosize-textarea.git
