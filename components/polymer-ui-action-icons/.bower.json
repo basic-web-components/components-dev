@@ -1,13 +1,14 @@
 {
   "name": "polymer-ui-action-icons",
   "homepage": "https://github.com/Polymer/polymer-ui-action-icons",
-  "_release": "6f2688a2d6",
+  "version": "0.2.2",
+  "_release": "0.2.2",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
+    "type": "version",
+    "tag": "0.2.2",
     "commit": "6f2688a2d605695e5779834eb004ecab3125ebe3"
   },
   "_source": "git://github.com/Polymer/polymer-ui-action-icons.git",
-  "_target": "master",
+  "_target": "0.2.2",
   "_originalSource": "Polymer/polymer-ui-action-icons"
 }
