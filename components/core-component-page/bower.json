@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "platform": "Polymer/platform#master",
+    "polymer": "Polymer/polymer#master",
     "core-action-icons": "Polymer/core-action-icons#master"
   }
 }
