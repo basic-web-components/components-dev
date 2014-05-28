@@ -7,5 +7,10 @@
   },
   "ignore": [
     "components"
-  ]
+  ],
+  "resolutions": {
+    "polymer": "master",
+    "core-component-page": "master",
+    "platform": "master"
+  }
 }
