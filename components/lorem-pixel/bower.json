@@ -1,0 +1,13 @@
+{
+  "name": "lorem-pixel",
+  "description": "A web component that shows a placeholder image from LoremPixel.com",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "**/.*"
+  ]
+}

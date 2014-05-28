@@ -1,0 +1,43 @@
+<!--
+Shows a placeholder image from LoremPixel.com.
+
+Useful for prototyping and early design iterations where you just want FPO (For
+Position Only) artwork.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="lorem-pixel" attributes="height width">
+
+<template>
+  <img id="image" height="{{height}}" width="{{width}}">
+</template>
+
+<script>
+Polymer( "lorem-pixel", {
+
+  heightChanged: function() {
+    this.reload();
+  },
+
+  ready: function() {
+    if ( !this.height && !this.width ) {
+      this.height = 300;
+      this.width = 400;
+    }
+  },
+
+  reload: function() {
+    if ( this.height > 0 && this.width > 0 ) {
+      this.$.image.src = "http://lorempixel.com/" + this.width + "/" + this.height + "/nature";
+    }
+  },
+
+  widthChanged: function() {
+    this.reload();
+  }
+
+});
+</script>
+
+</polymer-element>

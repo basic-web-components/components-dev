@@ -1,0 +1,22 @@
+{
+  "name": "lorem-pixel",
+  "description": "A web component that shows a placeholder image from LoremPixel.com",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/JanMiksovsky/lorem-pixel",
+  "_release": "1fef272053",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1fef272053c1afa74888af24ccb9755347b1f061"
+  },
+  "_source": "git://github.com/JanMiksovsky/lorem-pixel.git",
+  "_target": "master",
+  "_originalSource": "JanMiksovsky/lorem-pixel"
+}
