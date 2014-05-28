@@ -2,7 +2,6 @@
   "name": "basic-web-components",
   "version": "0.0.3",
   "dependencies": {
-    "lorem-pixel": "JanMiksovsky/lorem-pixel#master",
     "polymer": "Polymer/polymer#master",
     "polymer-selector": "Polymer/polymer-selector#master"
   },
