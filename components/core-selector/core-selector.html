@@ -1,74 +1,82 @@
 <!--
-Copyright 2013 The Polymer Authors. All rights reserved.
-Use of this source code is governed by a BSD-style
-license that can be found in the LICENSE file.
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+@group Polymer Core Elements
+
+`<core-selector>` is used to manage a list of elements that can be selected.
+
+The attribute `selected` indicates which item element is being selected.
+The attribute `multi` indicates if multiple items can be selected at once.
+Tapping on the item element would fire `core-activate` event. Use
+`core-select` event to listen for selection changes.
+
+Example:
+
+    <core-selector selected="0">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </core-selector>
+
+`<core-selector>` is not styled. Use the `core-selected` CSS class to style the selected element.
+
+    <style>
+      .item.core-selected {
+        background: #eee;
+      }
+    </style>
+    ...
+    <core-selector>
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </core-selector>
+
+@element core-selector
+@status stable
+@homepage github.io
+-->
+
+<!--
+Fired when an item's selection state is changed. This event is fired both
+when an item is selected or deselected. The `isSelected` detail property
+contains the selection state.
+
+@event core-select
+@param {Object} detail
+  @param {boolean} detail.isSelected true for selection and false for deselection
+  @param {Object} detail.item the item element
 -->
 <!--
-/**
- * @module Polymer Elements
- */
-/**
- * polymer-selector is used to manage a list of elements that can be selected.
- * The attribute "selected" indicates which item element is being selected.
- * The attribute "multi" indicates if multiple items can be selected at once.
- * Tapping on the item element would fire "polymer-activate" event. Use
- * "polymer-select" event to listen for selection changes.
- *
- * Example:
- *
- *     <polymer-selector selected="0">
- *       <div>Item 1</div>
- *       <div>Item 2</div>
- *       <div>Item 3</div>
- *     </polymer-selector>
- *
- * polymer-selector is not styled.  So one needs to use "polymer-selected" CSS
- * class to style the selected element.
- * 
- *     <style>
- *       .item.polymer-selected {
- *         background: #eee;
- *       }
- *     </style>
- *     ...
- *     <polymer-selector>
- *       <div class="item">Item 1</div>
- *       <div class="item">Item 2</div>
- *       <div class="item">Item 3</div>
- *     </polymer-selector>
- *
- * @class polymer-selector
- * @status stable
- */
-/**
- * Fired when an item's selection state is changed. This event is fired both
- * when an item is selected or deselected. The `isSelected` detail property
- * contains the selection state.
- * 
- * @event polymer-select
- * @param {Object} detail
- *   @param {boolean} detail.isSelected true for selection and false for deselection
- *   @param {Object} detail.item the item element
- */
-/**
- * Fired when an item element is tapped.
- * 
- * @event polymer-activate
- * @param {Object} detail
- *   @param {Object} detail.item the item element
- */
--->
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../polymer-selection/polymer-selection.html">
+Fired when an item element is tapped.
 
-<polymer-element name="polymer-selector"
+@event core-activate
+@param {Object} detail
+  @param {Object} detail.item the item element
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-selection/core-selection.html">
+
+<polymer-element name="core-selector"
     attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap target itemsSelector activateEvent">
+
   <template>
-    <polymer-selection id="selection" multi="{{multi}}" on-polymer-select="{{selectionSelect}}"></polymer-selection>
+    <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
     <content id="items" select="*"></content>
   </template>
+
   <script>
-    Polymer('polymer-selector', {
+
+    Polymer('core-selector', {
+
       /**
        * Gets or sets the selected element.  Default to use the index
        * of the item element.
@@ -78,21 +86,21 @@ license that can be found in the LICENSE file.
        *
        * Example:
        *
-       *     <polymer-selector valueattr="label" selected="foo">
+       *     <core-selector valueattr="label" selected="foo">
        *       <div label="foo"></div>
        *       <div label="bar"></div>
        *       <div label="zot"></div>
-       *     </polymer-selector>
+       *     </core-selector>
        *
        * In multi-selection this should be an array of values.
        *
        * Example:
        *
-       *     <polymer-selector id="selector" valueattr="label" multi>
+       *     <core-selector id="selector" valueattr="label" multi>
        *       <div label="foo"></div>
        *       <div label="bar"></div>
        *       <div label="zot"></div>
-       *     </polymer-selector>
+       *     </core-selector>
        *
        *     this.$.selector.selected = ['foo', 'zot'];
        *
@@ -101,6 +109,7 @@ license that can be found in the LICENSE file.
        * @default null
        */
       selected: null,
+
       /**
        * If true, multiple selections are allowed.
        *
@@ -109,6 +118,7 @@ license that can be found in the LICENSE file.
        * @default false
        */
       multi: false,
+
       /**
        * Specifies the attribute to be used for "selected" attribute.
        *
@@ -117,14 +127,16 @@ license that can be found in the LICENSE file.
        * @default 'name'
        */
       valueattr: 'name',
+
       /**
        * Specifies the CSS class to be used to add to the selected element.
        * 
        * @attribute selectedClass
        * @type string
-       * @default 'polymer-selected'
+       * @default 'core-selected'
        */
-      selectedClass: 'polymer-selected',
+      selectedClass: 'core-selected',
+
       /**
        * Specifies the property to be used to set on the selected element
        * to indicate its active state.
@@ -134,6 +146,7 @@ license that can be found in the LICENSE file.
        * @default ''
        */
       selectedProperty: '',
+
       /**
        * Specifies the property to be used to set on the selected element
        * to indicate its active state.
@@ -143,6 +156,7 @@ license that can be found in the LICENSE file.
        * @default 'active'
        */
       selectedAttribute: 'active',
+
       /**
        * Returns the currently selected element. In multi-selection this returns
        * an array of selected elements.
@@ -152,6 +166,7 @@ license that can be found in the LICENSE file.
        * @default null
        */
       selectedItem: null,
+
       /**
        * In single selection, this returns the model associated with the
        * selected element.
@@ -161,6 +176,7 @@ license that can be found in the LICENSE file.
        * @default null
        */
       selectedModel: null,
+
       /**
        * In single selection, this returns the selected index.
        *
@@ -169,22 +185,24 @@ license that can be found in the LICENSE file.
        * @default -1
        */
       selectedIndex: -1,
+
       /**
        * The target element that contains items.  If this is not set 
-       * polymer-selector is the container.
+       * core-selector is the container.
        * 
        * @attribute target
        * @type Object
        * @default null
        */
       target: null,
+
       /**
        * This can be used to query nodes from the target node to be used for 
        * selection items.  Note this only works if the 'target' property is set.
        *
        * Example:
        *
-       *     <polymer-selector target="{{$.myForm}}" itemsSelector="input[type=radio]"></polymer-selector>
+       *     <core-selector target="{{$.myForm}}" itemsSelector="input[type=radio]"></core-selector>
        *     <form id="myForm">
        *       <label><input type="radio" name="color" value="red"> Red</label> <br>
        *       <label><input type="radio" name="color" value="green"> Green</label> <br>
@@ -197,6 +215,7 @@ license that can be found in the LICENSE file.
        * @default ''
        */
       itemsSelector: '',
+
       /**
        * The event that would be fired from the item element to indicate
        * it is being selected.
@@ -206,7 +225,17 @@ license that can be found in the LICENSE file.
        * @default 'tap'
        */
       activateEvent: 'tap',
+
+      /**
+       * Set this to true to disallow changing the selection via the
+       * `activateEvent`.
+       *
+       * @attribute notap
+       * @type boolean
+       * @default false
+       */
       notap: false,
+
       ready: function() {
         this.activateListener = this.activateHandler.bind(this);
         this.observer = new MutationObserver(this.updateSelected.bind(this));
@@ -214,7 +243,11 @@ license that can be found in the LICENSE file.
           this.target = this;
         }
       },
+
       get items() {
+        if (!this.target) {
+          return [];
+        }
         var nodes = this.target !== this ? (this.itemsSelector ? 
             this.target.querySelectorAll(this.itemsSelector) : 
                 this.target.children) : this.$.items.getDistributedNodes();
@@ -222,28 +255,36 @@ license that can be found in the LICENSE file.
           return n && n.localName !== 'template';
         });
       },
+
       targetChanged: function(old) {
         if (old) {
           this.removeListener(old);
           this.observer.disconnect();
+          this.clearSelection();
         }
         if (this.target) {
           this.addListener(this.target);
           this.observer.observe(this.target, {childList: true});
+          this.updateSelected();
         }
       },
+
       addListener: function(node) {
         node.addEventListener(this.activateEvent, this.activateListener);
       },
+
       removeListener: function(node) {
         node.removeEventListener(this.activateEvent, this.activateListener);
       },
+
       get selection() {
         return this.$.selection.getSelection();
       },
+
       selectedChanged: function() {
         this.updateSelected();
       },
+
       updateSelected: function() {
         this.validateSelected();
         if (this.multi) {
@@ -255,6 +296,7 @@ license that can be found in the LICENSE file.
           this.valueToSelection(this.selected);
         }
       },
+
       validateSelected: function() {
         // convert to an array for multi-selection
         if (this.multi && !Array.isArray(this.selected) && 
@@ -262,6 +304,7 @@ license that can be found in the LICENSE file.
           this.selected = [this.selected];
         }
       },
+
       clearSelection: function() {
         if (this.multi) {
           this.selection.slice().forEach(function(s) {
@@ -273,14 +316,17 @@ license that can be found in the LICENSE file.
         this.selectedItem = null;
         this.$.selection.clear();
       },
+
       valueToSelection: function(value) {
         var item = (value === null || value === undefined) ? 
             null : this.items[this.valueToIndex(value)];
         this.$.selection.select(item);
       },
+
       updateSelectedItem: function() {
         this.selectedItem = this.selection;
       },
+
       selectedItemChanged: function() {
         if (this.selectedItem) {
           var t = this.selectedItem.templateInstance;
@@ -291,6 +337,7 @@ license that can be found in the LICENSE file.
         this.selectedIndex = this.selectedItem ? 
             parseInt(this.valueToIndex(this.selected)) : -1;
       },
+
       valueToIndex: function(value) {
         // find an item with value == value and return it's index
         for (var i=0, items=this.items, c; (c=items[i]); i++) {
@@ -301,16 +348,19 @@ license that can be found in the LICENSE file.
         // if no item found, the value itself is probably the index
         return value;
       },
+
       valueForNode: function(node) {
         return node[this.valueattr] || node.getAttribute(this.valueattr);
       },
-      // events fired from <polymer-selection> object
+
+      // events fired from <core-selection> object
       selectionSelect: function(e, detail) {
         this.updateSelectedItem();
         if (detail.item) {
           this.applySelection(detail.item, detail.isSelected);
         }
       },
+
       applySelection: function(item, isSelected) {
         if (this.selectedClass) {
           item.classList.toggle(this.selectedClass, isSelected);
@@ -326,6 +376,7 @@ license that can be found in the LICENSE file.
           }
         }
       },
+
       // event fired from host
       activateHandler: function(e) {
         if (!this.notap) {
@@ -342,10 +393,11 @@ license that can be found in the LICENSE file.
             } else {
               this.selected = s;
             }
-            this.asyncFire('polymer-activate', {item: item});
+            this.asyncFire('core-activate', {item: item});
           }
         }
       },
+
       addRemoveSelected: function(value) {
         var i = this.selected.indexOf(value);
         if (i >= 0) {
@@ -355,6 +407,7 @@ license that can be found in the LICENSE file.
         }
         this.valueToSelection(value);
       },
+
       findDistributedTarget: function(target, nodes) {
         // find first ancestor of target (including itself) that
         // is in nodes, if any

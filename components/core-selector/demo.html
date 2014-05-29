@@ -1,9 +1,17 @@
 <!DOCTYPE html>
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 <html>
 <head>
   <title>Selector</title>
   <script src="../platform/platform.js"></script>
-  <link rel="import" href="polymer-selector.html">
+  <link rel="import" href="core-selector.html">
 </head>
 <body unresolved>
   <polymer-element name="selector-examples">
@@ -27,7 +35,7 @@
           border-bottom: 1px solid #ccc;
         }
         
-        .list > *.polymer-selected {
+        .list > *.core-selected {
           background: #333;
         }
         
@@ -35,7 +43,7 @@
           height: 30px;
         }
         
-        li.polymer-selected:after {
+        li.core-selected:after {
           content: "\2713";
           position: absolute;
           padding-left: 10px;
@@ -43,25 +51,25 @@
       </style>
       
       <h2>basic</h2>
-      <polymer-selector class="list" selected="0">
+      <core-selector class="list" selected="0">
         <div>Item 0</div>
         <div>Item 1</div>
         <div>Item 2</div>
         <div>Item 3</div>
         <div>Item 4</div>
-      </polymer-selector>
+      </core-selector>
       
       <h2>multi-selection</h2>
-      <polymer-selector class="list" selected="{{multiSelected}}" multi>
+      <core-selector class="list" selected="{{multiSelected}}" multi>
         <div>Item 0</div>
         <div>Item 1</div>
         <div>Item 2</div>
         <div>Item 3</div>
         <div>Item 4</div>
-      </polymer-selector>
+      </core-selector>
       
       <h2>list</h2>
-      <polymer-selector target="{{$.list}}" selected="0"></polymer-selector>
+      <core-selector target="{{$.list}}" selected="0"></core-selector>
       <ul id="list">
         <li>Item 0</li>
         <li>Item 1</li>
@@ -71,9 +79,9 @@
       </ul>
       
       <h2>binding of a group of radio buttons to a variable</h2>
-      <polymer-selector target="{{$.myForm}}" itemsSelector="input[type=radio]" 
+      <core-selector target="{{$.myForm}}" itemsSelector="input[type=radio]" 
           selected="{{color}}" valueattr="value" selectedProperty="checked" 
-          activateEvent="change"></polymer-selector>
+          activateEvent="change"></core-selector>
       <form id="myForm">
         <label><input type="radio" name="color" value="red"> Red</label> <br>
         <label><input type="radio" name="color" value="green"> Green</label> <br>
