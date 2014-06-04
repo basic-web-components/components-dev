@@ -2,8 +2,9 @@
   "name": "basic-web-components",
   "version": "0.0.3",
   "dependencies": {
-    "polymer": "Polymer/polymer#master",
-    "core-selector": "Polymer/core-selector#master"
+    "core-icons": "Polymer/core-icons#master",
+    "core-selector": "Polymer/core-selector#master",
+    "polymer": "Polymer/polymer#master"
   },
   "ignore": [
     "components"
