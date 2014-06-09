@@ -24,7 +24,7 @@
 	url = git@github.com:basic-web-components/basic-button.git
 [submodule "components/basic-list-box"]
 	path = components/basic-list-box
-	url = git@github.com:JanMiksovsky/basic-list-box.git
+	url = git@github.com:basic-web-components/basic-list-box.git
 [submodule "components/basic-modes"]
 	path = components/basic-modes
 	url = git@github.com:basic-web-components/basic-modes.git
@@ -33,7 +33,7 @@
 	url = git@github.com:basic-web-components/basic-boilerplate.git
 [submodule "components/basic-sequence-navigator"]
 	path = components/basic-sequence-navigator
-	url = git@github.com:JanMiksovsky/basic-sequence-navigator.git
+	url = git@github.com:basic-web-components/basic-sequence-navigator.git
 [submodule "components/basic-sequence"]
 	path = components/basic-sequence
 	url = git@github.com:basic-web-components/basic-sequence.git
