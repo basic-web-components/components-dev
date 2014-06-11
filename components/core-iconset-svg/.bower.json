@@ -6,11 +6,11 @@
     "core-iconset": "Polymer/core-iconset#master"
   },
   "homepage": "https://github.com/Polymer/core-iconset-svg",
-  "_release": "6230dd083d",
+  "_release": "b8d8dc58a9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "6230dd083d8f7405df6501719580577f3f19c2d6"
+    "commit": "b8d8dc58a9ef749e159cee41698b02be4ff03146"
   },
   "_source": "git://github.com/Polymer/core-iconset-svg.git",
   "_target": "master",
