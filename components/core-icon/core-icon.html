@@ -8,7 +8,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <!--
 
-The `core-icon` element displays an icon using CSS background image. By default an icon renders as 24px square.
+The `core-icon` element displays an icon. By default an icon renders as 24px square.
 
 Example using src:
 
@@ -16,7 +16,14 @@ Example using src:
 
 Example setting size to 32px x 32px:
 
-    <core-icon src="big_star.png" size="32"></core-icon>
+    <core-icon class="big" src="big_star.png"></core-icon>
+
+    <style>
+      .big {
+        height: 32px;
+        width: 32px;
+      }
+    </style>
 
 Example using icon from default iconset:
 
@@ -29,7 +36,7 @@ Example using icon `cherry` from custom iconset `fruit`:
 See [core-iconset](#core-iconset) and [core-iconset-svg](#core-iconset-svg) for more information about
 how to use a custom iconset.
 
-See [core-icons](#core-icons) for the default set of icons. To use the default set of icons you'll need to include an import for `core-icons.html`.
+See [core-icons](http://www.polymer-project.org/components/core-icons/demo.html) for the default set of icons. To use the default set of icons you'll need to include an import for `core-icons.html`.
 
 @group Polymer Core Elements
 @element core-icon
@@ -39,7 +46,7 @@ See [core-icons](#core-icons) for the default set of icons. To use the default s
 
 <link rel="stylesheet" href="core-icon.css" shim-shadowdom>
 
-<polymer-element name="core-icon" attributes="src size icon">
+<polymer-element name="core-icon" attributes="src icon">
 <script>
 (function() {
   
@@ -59,15 +66,6 @@ See [core-icons](#core-icons) for the default set of icons. To use the default s
     src: '',
 
     /**
-     * Specifies the size of the icon in pixel units.
-     *
-     * @attribute size
-     * @type string
-     * @default 24
-     */
-    size: 24,
-
-    /**
      * Specifies the icon name or index in the set of icons available in
      * the icon's icon set. If the icon property is specified,
      * the src property should not be.
@@ -79,7 +77,7 @@ See [core-icons](#core-icons) for the default set of icons. To use the default s
     icon: '',
 
     observe: {
-      'size icon': 'updateIcon'
+      'icon': 'updateIcon'
     },
 
     defaultIconset: 'icons',
@@ -92,9 +90,16 @@ See [core-icons](#core-icons) for the default set of icons. To use the default s
     },
 
     srcChanged: function() {
-      this.style.backgroundImage = 'url(' + this.src + ')';
-      this.style.backgroundPosition = 'center';
-      this.style.backgroundSize = this.size + 'px ' + this.size + 'px';
+      var icon = this._icon || document.createElement('div');
+      icon.textContent = '';
+      icon.setAttribute('fit', '');
+      icon.style.backgroundImage = 'url(' + this.src + ')';
+      icon.style.backgroundPosition = 'center';
+      icon.style.backgroundSize = '100%';
+      if (!icon.parentNode) {
+        this.appendChild(icon);
+      }
+      this._icon = icon;
     },
 
     getIconset: function(name) {
@@ -102,14 +107,17 @@ See [core-icons](#core-icons) for the default set of icons. To use the default s
     },
 
     updateIcon: function() {
-      this.style.width = this.style.height = this.size + 'px';
-      if (this.icon) {
-        var parts = String(this.icon).split(':');
-        var icon = parts.pop();
-        if (icon) {
-          var set = this.getIconset(parts.pop());
-          if (set) {
-            set.applyIcon(this, icon, this.size / set.iconSize);
+      if (!this.icon) {
+        return;
+      }
+      var parts = String(this.icon).split(':');
+      var icon = parts.pop();
+      if (icon) {
+        var set = this.getIconset(parts.pop());
+        if (set) {
+          this._icon = set.applyIcon(this, icon);
+          if (this._icon) {
+            this._icon.setAttribute('fit', '');
           }
         }
       }
