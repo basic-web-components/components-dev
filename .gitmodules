@@ -46,3 +46,24 @@
 [submodule "components/basic-lazy-create"]
 	path = components/basic-lazy-create
 	url = git@github.com:basic-web-components/basic-lazy-create.git
+[submodule "components/basic-calendar-day"]
+	path = components/basic-calendar-day
+	url = git@github.com:basic-web-components/basic-calendar-day.git
+[submodule "components/basic-calendar-month-days"]
+	path = components/basic-calendar-month-days
+	url = git@github.com:basic-web-components/basic-calendar-month-days.git
+[submodule "components/basic-calendar-month"]
+	path = components/basic-calendar-month
+	url = git@github.com:basic-web-components/basic-calendar-month.git
+[submodule "components/basic-calendar-week"]
+	path = components/basic-calendar-week
+	url = git@github.com:basic-web-components/basic-calendar-week.git
+[submodule "components/basic-days-of-week"]
+	path = components/basic-days-of-week
+	url = git@github.com:basic-web-components/basic-days-of-week.git
+[submodule "components/basic-month-and-year"]
+	path = components/basic-month-and-year
+	url = git@github.com:basic-web-components/basic-month-and-year.git
+[submodule "components/basic-month-name"]
+	path = components/basic-month-name
+	url = git@github.com:basic-web-components/basic-month-name.git
