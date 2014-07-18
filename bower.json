@@ -6,6 +6,9 @@
     "core-selector": "Polymer/core-selector#master",
     "polymer": "Polymer/polymer#master"
   },
+  "devDependencies": {
+    "globalize": "*"    
+  },
   "ignore": [
     "components"
   ]
