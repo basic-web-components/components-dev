@@ -7,7 +7,7 @@
     "polymer": "Polymer/polymer#master"
   },
   "devDependencies": {
-    "globalize": "*"    
+    "globalize": "0.x"    
   },
   "ignore": [
     "components"

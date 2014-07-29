@@ -9,6 +9,6 @@
     "commit": "2cbbe9e30609735aab9dc29d8c53c5cd8f810149"
   },
   "_source": "git://github.com/jquery/globalize.git",
-  "_target": "*",
+  "_target": "0.x",
   "_originalSource": "globalize"
 }
