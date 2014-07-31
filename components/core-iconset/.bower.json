@@ -7,11 +7,11 @@
     "core-icon": "Polymer/core-icon#master"
   },
   "homepage": "https://github.com/Polymer/core-iconset",
-  "_release": "9d700c88b6",
+  "_release": "af5f02cfda",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9d700c88b609a158cff786375ce72bf1bc90d76c"
+    "commit": "af5f02cfda42fd291e10f53a9fced422d3d88dc2"
   },
   "_source": "git://github.com/Polymer/core-iconset.git",
   "_target": "master",
