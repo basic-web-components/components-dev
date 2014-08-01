@@ -6,11 +6,11 @@
     "core-selection": "Polymer/core-selection#master"
   },
   "homepage": "https://github.com/Polymer/core-selector",
-  "_release": "465217c9e8",
+  "_release": "39974b4123",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "465217c9e880517e6d49a79e190da34a72ced1ba"
+    "commit": "39974b41238af8465be0eaacdff0280d47430de8"
   },
   "_source": "git://github.com/Polymer/core-selector.git",
   "_target": "master",
