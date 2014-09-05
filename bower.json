@@ -4,12 +4,17 @@
   "dependencies": {
     "core-icons": "Polymer/core-icons#master",
     "core-selector": "Polymer/core-selector#master",
-    "polymer": "Polymer/polymer#master"
+    "polymer": "0.4"
   },
   "devDependencies": {
-    "globalize": "0.x"    
+    "globalize": "0.x"
   },
   "ignore": [
     "components"
-  ]
+  ],
+  "resolutions": {
+    "polymer": "0.4",
+    "core-component-page": ">=0.4.0 <1.0.0",
+    "platform": ">=0.4.0 <1.0.0"
+  }
 }
