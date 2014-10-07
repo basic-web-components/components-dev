@@ -486,20 +486,24 @@ Fired when an item element is tapped.
        * Selects the previous item.  This should be used in single selection only.
        *
        * @method selectPrevious
+       * @param {boolean} wrap if true and it is already at the first item, wrap to the end
        * @returns the previous item or undefined if there is none
        */
-      selectPrevious: function() {
-        return this.selectIndex(this.selectedIndex - 1);
+      selectPrevious: function(wrap) {
+        var i = wrap && !this.selectedIndex ? this.items.length - 1 : this.selectedIndex - 1;
+        return this.selectIndex(i);
       },
       
       /**
        * Selects the next item.  This should be used in single selection only.
        *
        * @method selectNext
+       * @param {boolean} wrap if true and it is already at the last item, wrap to the front
        * @returns the next item or undefined if there is none
        */
-      selectNext: function() {
-        return this.selectIndex(this.selectedIndex + 1);
+      selectNext: function(wrap) {
+        var i = wrap && this.selectedIndex >= this.items.length - 1 ? 0 : this.selectedIndex + 1;
+        return this.selectIndex(i);
       }
       
     });
