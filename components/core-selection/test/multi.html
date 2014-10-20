@@ -9,13 +9,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>core-selection-multi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <script src="../../../platform/platform.js"></script>
-  <script src="../../../polymer-test-tools/chai/chai.js"></script>
-  <script src="../../../polymer-test-tools/htmltest.js"></script>
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
 
-  <link rel="import" href="../../core-selection.html">
+  <link rel="import" href="../core-selection.html">
 
 </head>
 <body>
@@ -24,31 +25,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
 
-    document.addEventListener('polymer-ready', function() {
-      var assert = chai.assert;
-      var s = document.querySelector('core-selection');
-      s.addEventListener("core-select", function(event) {
-        if (test === 1) {
-          // check test1
+    var s = document.querySelector('core-selection');
+
+    suite('basic', function() {
+
+      test('select item', function(done) {
+        var func = function(event) {
           assert.isTrue(event.detail.isSelected);
           assert.equal(event.detail.item, '(item1)');
           assert.isTrue(s.isSelected(event.detail.item));
           assert.equal(s.getSelection().length, 1);
-          // test2
-          test++;
-          s.select('(item2)');
-        } else if (test === 2) {
-          // check test2
+          s.removeEventListener('core-select', func);
+          done();
+        }
+        s.addEventListener('core-select', func);
+        s.select('(item1)');
+      });
+
+      test('select null', function(done) {
+        var func = function(event) {
           assert.isTrue(event.detail.isSelected);
           assert.equal(event.detail.item, '(item2)');
           assert.isTrue(s.isSelected(event.detail.item));
           assert.equal(s.getSelection().length, 2);
+          s.removeEventListener("core-select", func);
           done();
         }
+        s.addEventListener("core-select", func);
+        s.select('(item2)');
       });
-      // test1
-      var test = 1;
-      s.select('(item1)');
+
     });
 
   </script>
