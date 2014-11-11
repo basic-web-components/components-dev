@@ -9,18 +9,12 @@
     "webcomponents"
   ],
   "license": "BSD",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "_release": "c97b56a2fa",
+  "ignore": [],
+  "_release": "606609acf9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c97b56a2fa6e7f2d19431d47f99b5acdd9150dd2"
+    "commit": "606609acf9529baf69f568789a15abd32974041f"
   },
   "_source": "git://github.com/Polymer/webcomponentsjs.git",
   "_target": "master",

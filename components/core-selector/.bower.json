@@ -6,14 +6,14 @@
     "core-selection": "Polymer/core-selection#master"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^1.1.0"
+    "web-component-tester": "Polymer/web-component-tester#^1.4.2"
   },
   "homepage": "https://github.com/Polymer/core-selector",
-  "_release": "f13a2bf1c8",
+  "_release": "2a27c0c168",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f13a2bf1c81e3d726bebdaf2da064cb579036ab0"
+    "commit": "2a27c0c1684319fd01b06db2a33280c30ba2f0f8"
   },
   "_source": "git://github.com/Polymer/core-selector.git",
   "_target": "master",
