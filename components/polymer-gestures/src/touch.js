@@ -323,9 +323,15 @@
     };
     // if click coordinates are close to touch coordinates, assume the click came from a touch
     var wasTouched = scope.mouseEvents.lastTouches.some(closeTo);
-    // if the click came from touch, and the click target is not the same as the touchstart target, then the touchstart
-    // target was probably removed, and the click should be "busted"
-    if (wasTouched && (ev.target !== touchEvents.firstTarget)) {
+    // if the click came from touch, and the touchstart target is not in the path of the click event,
+    // then the touchstart target was probably removed, and the click should be "busted"
+    var path = scope.targetFinding.path(ev);
+    if (wasTouched) {
+      for (var i = 0; i < path.length; i++) {
+        if (path[i] === touchEvents.firstTarget) {
+          return;
+        }
+      }
       ev.preventDefault();
       STOP_PROP_FN.call(ev);
     }

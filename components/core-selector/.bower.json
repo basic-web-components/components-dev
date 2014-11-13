@@ -9,11 +9,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.4.2"
   },
   "homepage": "https://github.com/Polymer/core-selector",
-  "_release": "2a27c0c168",
+  "_release": "f9c73fd0e5",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2a27c0c1684319fd01b06db2a33280c30ba2f0f8"
+    "commit": "f9c73fd0e5e4d31312c3e8944b1c31ffbddbe1d4"
   },
   "_source": "git://github.com/Polymer/core-selector.git",
   "_target": "master",

@@ -4,7 +4,7 @@
   "dependencies": {
     "core-icons": "Polymer/core-icons#master",
     "core-selector": "Polymer/core-selector#master",
-    "polymer": "Polymer/polymer#0.4.2"
+    "polymer": "^0.5.0"
   },
   "devDependencies": {
     "globalize": "0.x"
@@ -13,8 +13,8 @@
     "components"
   ],
   "resolutions": {
-    "polymer": "0.4.2",
-    "platform": "^0.4.0",
-    "core-component-page": "^0.4.0"
+    "polymer": "^0.5.0",
+    "webcomponentsjs": "^0.5.0",
+    "core-component-page": "^0.5.0"
   }
 }
