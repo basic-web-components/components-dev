@@ -14,12 +14,12 @@ Supported events:
     * Targets the nearest common ancestor of down and up.relatedTarget
     * Can be prevented by calling any gesture event's preventTap function
 * pinch
-
-Not yet implemented:
-* flick
 * hold
 * holdpulse
 * release
+
+Not yet implemented:
+* flick
 * pinchstart
 * pinchend
 

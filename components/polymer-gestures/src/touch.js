@@ -226,7 +226,7 @@
         d.forEach(function(p) {
           this.cancel(p);
           pointermap.delete(p.pointerId);
-        });
+        }, this);
       }
     },
     touchstart: function(inEvent) {

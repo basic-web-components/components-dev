@@ -16,11 +16,11 @@
     "test",
     "tests"
   ],
-  "_release": "1288fe573d",
+  "_release": "197c3a0150",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1288fe573dc57cde304f66f0833d0644c766158c"
+    "commit": "197c3a0150e7a13374cfcc72e7066113723a623d"
   },
   "_source": "git://github.com/Polymer/polymer-expressions.git",
   "_target": "master",

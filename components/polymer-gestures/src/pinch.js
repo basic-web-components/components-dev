@@ -66,7 +66,9 @@
       'cancel'
     ],
     exposes: [
+      'pinchstart',
       'pinch',
+      'pinchend',
       'rotate'
     ],
     defaultActions: {
@@ -84,11 +86,19 @@
           diameter: points.diameter,
           target: scope.targetFinding.LCA(points.a.target, points.b.target)
         };
+
+        this.firePinch('pinchstart', points.diameter, points);
       }
     },
     up: function(inEvent) {
       var p = pointermap.get(inEvent.pointerId);
+      var num = pointermap.pointers();
       if (p) {
+        if (num === 2) {
+          // fire 'pinchend' before deleting pointer
+          var points = this.calcChord();
+          this.firePinch('pinchend', points.diameter, points);
+        }
         pointermap.delete(inEvent.pointerId);
       }
     },
@@ -103,9 +113,9 @@
     cancel: function(inEvent) {
         this.up(inEvent);
     },
-    firePinch: function(diameter, points) {
+    firePinch: function(type, diameter, points) {
       var zoom = diameter / this.reference.diameter;
-      var e = eventFactory.makeGestureEvent('pinch', {
+      var e = eventFactory.makeGestureEvent(type, {
         bubbles: true,
         cancelable: true,
         scale: zoom,
@@ -132,7 +142,7 @@
       var diameter = points.diameter;
       var angle = this.calcAngle(points);
       if (diameter != this.reference.diameter) {
-        this.firePinch(diameter, points);
+        this.firePinch('pinch', diameter, points);
       }
       if (angle != this.reference.angle) {
         this.fireRotate(angle, points);

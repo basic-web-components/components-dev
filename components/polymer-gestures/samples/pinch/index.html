@@ -64,7 +64,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script>
       var events = [
         // base events
-        'pinch'
+        'pinch',
+        'pinchstart',
+        'pinchend',
+        'rotate'
       ];
       find('capture', 'output');
       events.forEach(function(en) {
