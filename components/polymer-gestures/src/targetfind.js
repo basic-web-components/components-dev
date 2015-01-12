@@ -8,7 +8,7 @@
  */
 
 (function(scope) {
-  var HAS_FULL_PATH = false;
+  var hasFullPath = false;
 
   // test for full event path support
   var pathTest = document.createElement('meta');
@@ -19,7 +19,7 @@
     pathTest.addEventListener('testpath', function(ev) {
       if (ev.path) {
         // if the span is in the event path, then path[0] is the real source for all events
-        HAS_FULL_PATH = ev.path[0] === s;
+        hasFullPath = ev.path[0] === s;
       }
       ev.stopPropagation();
     });
@@ -96,7 +96,7 @@
       return s;
     },
     findTarget: function(inEvent) {
-      if (HAS_FULL_PATH && inEvent.path && inEvent.path.length) {
+      if (hasFullPath && inEvent.path && inEvent.path.length) {
         return inEvent.path[0];
       }
       var x = inEvent.clientX, y = inEvent.clientY;
@@ -110,7 +110,7 @@
     },
     findTouchAction: function(inEvent) {
       var n;
-      if (HAS_FULL_PATH && inEvent.path && inEvent.path.length) {
+      if (hasFullPath && inEvent.path && inEvent.path.length) {
         var path = inEvent.path;
         for (var i = 0; i < path.length; i++) {
           n = path[i];
@@ -189,7 +189,7 @@
     },
     path: function(event) {
       var p;
-      if (HAS_FULL_PATH && event.path && event.path.length) {
+      if (hasFullPath && event.path && event.path.length) {
         p = event.path;
       } else {
         p = [];

@@ -6,12 +6,16 @@
     "core-iconset-svg": "Polymer/core-iconset-svg#master",
     "polymer": "Polymer/polymer#master"
   },
+  "ignore": [
+    "util",
+    "update-icons.sh"
+  ],
   "homepage": "https://github.com/Polymer/core-icons",
-  "_release": "d99c3041f6",
+  "_release": "7a8e6eeff6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d99c3041f644a672c5bd9f3edb47027ee445fa62"
+    "commit": "7a8e6eeff629c0c2f3a7bd993193a00be41c5330"
   },
   "_source": "git://github.com/Polymer/core-icons.git",
   "_target": "master",
