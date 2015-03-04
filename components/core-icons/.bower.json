@@ -11,11 +11,11 @@
     "update-icons.sh"
   ],
   "homepage": "https://github.com/Polymer/core-icons",
-  "_release": "7a8e6eeff6",
+  "_release": "e6a82a5a4c",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "7a8e6eeff629c0c2f3a7bd993193a00be41c5330"
+    "commit": "e6a82a5a4c5486b5be4d6834a097cbcffe65e16e"
   },
   "_source": "git://github.com/Polymer/core-icons.git",
   "_target": "master",

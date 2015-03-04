@@ -78,7 +78,9 @@
       var e = this.makeBaseEvent(inType, inDict);
       for (var i = 0, keys = Object.keys(inDict), k; i < keys.length; i++) {
         k = keys[i];
-        e[k] = inDict[k];
+        if( k !== 'bubbles' && k !== 'cancelable' ) {
+           e[k] = inDict[k];
+        }
       }
       return e;
     },
@@ -87,7 +89,7 @@
 
       var e = this.makeBaseEvent(inType, inDict);
       // define inherited MouseEvent properties
-      for(var i = 0, p; i < MOUSE_PROPS.length; i++) {
+      for(var i = 2, p; i < MOUSE_PROPS.length; i++) {
         p = MOUSE_PROPS[i];
         e[p] = inDict[p] || MOUSE_DEFAULTS[i];
       }

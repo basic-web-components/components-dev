@@ -22,7 +22,7 @@
       dispatcher.listen(target, this.events);
     },
     unregister: function(target) {
-      if (target === document) {
+      if (target.nodeType === Node.DOCUMENT_NODE) {
         return;
       }
       dispatcher.unlisten(target, this.events);

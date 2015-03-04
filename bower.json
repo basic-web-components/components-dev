@@ -7,7 +7,8 @@
     "polymer": "^0.5.0"
   },
   "devDependencies": {
-    "globalize": "0.x"
+    "globalize": "0.x",
+    "web-component-tester": "*"
   },
   "ignore": [
     "components"
