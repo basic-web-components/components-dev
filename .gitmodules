@@ -82,3 +82,6 @@
 [submodule "components/basic-fade-overflow"]
 	path = components/basic-fade-overflow
 	url = https://github.com/basic-web-components/basic-fade-overflow.git
+[submodule "components/basic-helpers"]
+	path = components/basic-helpers
+	url = https://github.com/basic-web-components/basic-helpers.git
