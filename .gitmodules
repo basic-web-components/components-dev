@@ -85,6 +85,3 @@
 [submodule "components/basic-helpers"]
 	path = components/basic-helpers
 	url = https://github.com/basic-web-components/basic-helpers.git
-[submodule "components/sandbox"]
-	path = components/sandbox
-	url = https://github.com/basic-web-components/sandbox.git
