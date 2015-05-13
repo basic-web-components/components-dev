@@ -1,4 +1,1 @@
-This repository contains all basic web components as submodules for easier dev
-work across components. 
-
-See the [wiki](https://github.com/basic-web-components/components-dev/wiki) for general documentation about the project and contribution guidelines.
+This repository was designed to facilitate development of early versions of Basic Web Components up to 0.5. **For versions 6.0 and above, please see the newer [consolidated Basic Web Components repository](https://github.com/basic-web-components/basic-web-components).**
